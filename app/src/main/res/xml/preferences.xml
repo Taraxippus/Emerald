@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<CheckBoxPreference
+        android:key="audioFocus"
+        android:title="Use audio focus"
+   	    android:summary="Stop music when a new audio source starts playing"
+        android:defaultValue="true" />
+
+	<Preference
+        android:key="volume"
+        android:title="Change volume"
+   	    android:summary="Change volume of the player" />
+	
+	<CheckBoxPreference
+        android:key="repeat"
+        android:title="Loop music"
+   	    android:summary="Plays music repeatedly when enabled"
+        android:defaultValue="false" />
+	
+	<CheckBoxPreference
+        android:key="skip"
+        android:title="Skip to next"
+   	    android:summary="Automatically skip to next when the end of the track is reached"
+        android:defaultValue="true" />
+	
+</PreferenceScreen>

@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="AppTheme" parent="@android:style/Theme.Holo.Light">
+    <style name="MainTheme" parent="@android:style/Theme.Material.Dialog.NoActionBar">
+		<item name="android:colorPrimary">#4CAF50</item>
+		<item name="android:colorPrimaryDark">#388E3C</item>
+		<item name="android:colorAccent">#FFC107</item>
+	</style>
+	<style name="PreferenceTheme" parent="@android:style/Theme.Material.Dialog">
+		<item name="android:colorPrimary">#4CAF50</item>
+		<item name="android:colorPrimaryDark">#388E3C</item>
+		<item name="android:colorAccent">#FFC107</item>
 	</style>
 </resources>
