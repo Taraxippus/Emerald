@@ -43,6 +43,7 @@ public class MainService extends Service implements MediaPlayer.OnPreparedListen
 	public static final String ACTION_STOP = "com.taraxippus.emerald.action.STOP";
 	public static final String ACTION_SKIP_NEXT = "com.taraxippus.emerald.action.SKIP_NEXT";
 	public static final String ACTION_SAVE = "com.taraxippus.emerald.action.SAVE";
+	public static final String ACTION_AUDIO_NOISY = "com.taraxippus.emerald.action.AUDIO_NOISY";
 	
 	public File FILE;
 	
@@ -64,6 +65,12 @@ public class MainService extends Service implements MediaPlayer.OnPreparedListen
 	{
 		if (FILE == null)
 		{
+			if (intent != null && ACTION_AUDIO_NOISY.equals(intent.getAction()))
+			{
+				stopSelf();
+				return super.onStartCommand(intent, flags, startId);
+			}
+			
 			FILE = new File(getFilesDir() + "/out.mid");
 			
 			if (!FILE.exists())
@@ -325,7 +332,7 @@ public class MainService extends Service implements MediaPlayer.OnPreparedListen
 		if (action.equalsIgnoreCase(ACTION_PLAY))
 			controller.getTransportControls().play();
 
-		else if (action.equalsIgnoreCase(ACTION_PAUSE))
+		else if (action.equalsIgnoreCase(ACTION_PAUSE) || action.equalsIgnoreCase(ACTION_AUDIO_NOISY))
 			controller.getTransportControls().pause();
 
 		else if (action.equalsIgnoreCase(ACTION_STOP))

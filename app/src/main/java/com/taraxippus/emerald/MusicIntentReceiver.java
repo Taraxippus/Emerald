@@ -12,7 +12,7 @@ public class MusicIntentReceiver extends android.content.BroadcastReceiver
 		if (intent.getAction().equals(android.media.AudioManager.ACTION_AUDIO_BECOMING_NOISY))
 		{
 			Intent intent1 = new Intent(ctx.getApplicationContext(), MainService.class);
-			intent1.setAction(MainService.ACTION_PAUSE);
+			intent1.setAction(MainService.ACTION_AUDIO_NOISY);
 			ctx.startService(intent1);
 		}
 	}
